@@ -8,10 +8,12 @@ function ProductList({ onHomeClick }) {
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
     const [addedToCart,setAddedToCart] = useState({})
     const dispatch = useDispatch();
+    const CartItems = useSelector(state => state.cart.items);
     const calculateTotalQuantity = () => {
-        return CartItems ? CartItems.reduce((total, item) => total + item.quantity, 0) : 0;
-         };
-    
+        console.log("we are in total")
+        console.log(CartItems.reduce((total, item) => total + item.quantity, 0))
+      return CartItems ? CartItems.reduce((total, item) => total + item.quantity, 0) : 0;
+       };
     const plantsArray = [
         {
             category: "Air Purifying Plants",
@@ -250,7 +252,6 @@ function ProductList({ onHomeClick }) {
         setShowCart(true); // Set showCart to true when cart icon is clicked
     };
     const handleAddToCart = (product) => {
-        console.log("here")
         dispatch(addItem(product)); // Dispatch the action to add the product to the cart (Redux action)
       
         setAddedToCart((prevState) => ({ // Update the local state to reflect that the product has been added
@@ -276,7 +277,7 @@ function ProductList({ onHomeClick }) {
                         <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="" />
                         <a href="/" onClick={(e) => handleHomeClick(e)}>
                             <div>
-                                <h3 style={{ color: 'white' }}>Paradise Nursery</h3>
+                                <h3 style={{ color: 'white' }}>Ecopure Nursery</h3>
                                 <i style={{ color: 'white' }}>Where Green Meets Serenity</i>
                             </div>
                         </a>
@@ -285,7 +286,7 @@ function ProductList({ onHomeClick }) {
                 </div>
                 <div style={styleObjUl}>
                     <div> <a href="#" onClick={(e) => handlePlantsClick(e)} style={styleA}>Plants</a></div>
-                    <div> <a href="#" onClick={(e) => handleCartClick(e)} style={styleA}><h1 className='cart'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="IconChangeColor" height="68" width="68"><rect width="156" height="156" fill="none"></rect><circle cx="80" cy="216" r="12"></circle><circle cx="184" cy="216" r="12"></circle><path d="M42.3,72H221.7l-26.4,92.4A15.9,15.9,0,0,1,179.9,176H84.1a15.9,15.9,0,0,1-15.4-11.6L32.5,37.8A8,8,0,0,0,24.8,32H8" fill="none" stroke="#faf9f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" id="mainIconPathAttribute"></path></svg></h1></a></div>
+                    <div> <a href="#" onClick={(e) => handleCartClick(e)} style={styleA}><h1 className='cart'><div className='cart-quantity'>{calculateTotalQuantity()}</div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="IconChangeColor" height="68" width="68"><rect width="156" height="156" fill="none"></rect><circle cx="80" cy="216" r="12"></circle><circle cx="184" cy="216" r="12"></circle><path d="M42.3,72H221.7l-26.4,92.4A15.9,15.9,0,0,1,179.9,176H84.1a15.9,15.9,0,0,1-15.4-11.6L32.5,37.8A8,8,0,0,0,24.8,32H8" fill="none" stroke="#faf9f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" id="mainIconPathAttribute"></path></svg></h1></a></div>
                 </div>
             </div>
             {!showCart ? (
@@ -293,7 +294,7 @@ function ProductList({ onHomeClick }) {
                 {plantsArray.map((item, index) => (
                     <div key={index}>
                         <h1>
-                            <div>{item.category}</div>
+                            <div className="category">{item.category}</div>
                         </h1>
                         <div className="product-list"> 
                             {item.plants.map((plant, plantIndex) => ( 

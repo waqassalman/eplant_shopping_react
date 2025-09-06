@@ -8,5 +8,4 @@ const store = configureStore({
         cart: cartReducer,
     },
 });
-
 export default store; // Export the store for use in the app (e.g., in <Provider store={store}>)
