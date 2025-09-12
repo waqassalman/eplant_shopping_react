@@ -4,7 +4,7 @@ import CategoryList from './categoryList';
 
 function LandingPage() {
   const categoryListIndexValue = 3;
-  const CategoryProductListingIndex = 3;
+  const CategoryProductListingIndex = 6;
   const showCategoryProducts = false;
   return (
 

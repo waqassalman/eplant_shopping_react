@@ -5,8 +5,6 @@ import './navbar.css'
 const Navbar = () => {
   const CartItems = useSelector(state => state.cart.items);
   const calculateTotalQuantity = () => {
-    console.log("we are in total")
-    console.log(CartItems.reduce((total, item) => total + item.quantity, 0))
   return CartItems ? CartItems.reduce((total, item) => total + item.quantity, 0) : 0;
    };
 
