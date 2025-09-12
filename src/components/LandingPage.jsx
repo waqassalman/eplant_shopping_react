@@ -24,7 +24,7 @@ function LandingPage() {
           <div className="column home-image-col">
             <img
               className="home-image"
-              src="/eplant_shopping_react/src/assets/plant-2.png"
+              src="/eplant_shopping_react/assets/plant-2.png"
               alt=""
             />
           </div>
