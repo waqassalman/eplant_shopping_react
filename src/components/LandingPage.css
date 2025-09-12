@@ -1,0 +1,75 @@
+.about-us-container {
+  padding: 100px 0px;
+  overflow: hidden;
+  background-color: aliceblue;
+  }
+  
+  .about-us-heading {
+    font-family: "Raleway", sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #1a4b1e;
+    padding-bottom: 50px;
+    /* text-align: center; */
+  }
+  .home-image {
+    width: 50vh;  
+    z-index: 3;
+    position: relative;
+}
+.home-image-col:after {
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  top: 10rem;
+  right: 0.8rem;
+  z-index: 1;
+  width: 25%;
+  background-color: #2d5a27ab;
+  height: 50%;
+}
+.team-container {
+  padding: 50px;
+  text-align: center;
+  content: '';
+  background-image: url(/eplant_shopping_react/src/assets/team-bg.png);
+  background-size: 100% 50%;
+  background-color: #e6f4e6;
+  height: 100vh;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+.home-image-col{
+  text-align: center;
+}
+.home-image-col:before {
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  top: 6rem;
+  right: 10rem;
+  z-index: 1;
+  width: 30%;
+  background-color: #45a04917;
+  height: 60%;
+}
+.about-us-description {
+  font-family: "Raleway", sans-serif;
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+  
+.about-us-content {
+  font-size: 18px;
+  padding: 50px 0px 50px 0px;
+}
+
+  .plant_logo_right{
+    text-align: right;
+  }
+
+  .plant_logo_left{
+    text-align: left;
+  }

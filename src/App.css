@@ -1,10 +1,30 @@
 /* LandingPage.css */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  padding: 0px 50px 0 50px;
+}
+.column
+  {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
 
 .landing-page {
   position: relative;
